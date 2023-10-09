@@ -21,10 +21,10 @@ const checkPromises = event => {
   for (let i = 0; i< amount; i++) {
     createPromise(i, firstDelay + delayStep*i)
       .then(({ position, delay }) => {
-        Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
+        Notiflix.Notify.success(`✅ Fulfilled promise ${position + 1} in ${delay}ms`);
       })
       .catch(({ position, delay }) => {
-        Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
+        Notiflix.Notify.failure(`❌ Rejected promise ${position + 1} in ${delay}ms`);
       });
   }
 };
